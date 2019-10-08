@@ -1,0 +1,2 @@
+add_lunch_combo lineage_s3ve3gds-eng
+add_lunch_combo lineage_s3ve3gds-userdebug

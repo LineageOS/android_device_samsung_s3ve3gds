@@ -37,15 +37,15 @@
 #include "property_service.h"
 #include "vendor_init.h"
 
-#include "init_msm8974.h"
+#include "init_msm8226.h"
 
 using android::base::GetProperty;
 using android::init::property_set;
 
 void gsm_properties()
 {
-    property_set("telephony.lteOnGsmDevice", "1");
-    property_set("ro.telephony.default_network", "9");
+    property_set("ro.telephony.default_network", "3");
+    property_set("telephony.lteOnGsmDevice", "0");
 }
 
 void init_target_properties()
@@ -56,19 +56,28 @@ void init_target_properties()
 
     std::string bootloader = GetProperty("ro.bootloader", "");
 
-    if (bootloader.find("G900FD") == 0) {
-        /* klteduosxx */
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/klteduosxx/klte:6.0.1/MMB29M/G900FDXXS1CQD2:user/release-keys");
-        property_override("ro.build.description", "klteduosxx-user 6.0.1 MMB29M G900FDXXS1CQD2 release-keys");
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G900FD");
-        property_override_dual("ro.product.device", "ro.vendor.product.device", "klte");
+    if (bootloader.find("I9301I") == 0) {
+        /* s3ve3gds */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/s3ve3gds/s3ve3g:4.4.2/KOT49H/I9301IXXUANL1:user/release-keys");
+        property_override("ro.build.description", "s3ve3gds-user 4.4.2 KOT49H I9301IXXUANL1 release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "GT-I9301I");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "s3ve3g");
         gsm_properties();
-    } else if (bootloader.find("G900MD") == 0) {
-        /* klteduosub */
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/klteduosub/klte:6.0.1/MMB29M/G900MDUBS1CQD2:user/release-keys");
-        property_override("ro.build.description", "klteduosub-user 6.0.1 MMB29M G900MDUBS1CQD2 release-keys");
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-G900MD");
-        property_override_dual("ro.product.device", "ro.vendor.product.device", "klte");
+    } else if (bootloader.find("I9301Q") == 0) {
+        /* s3ve3gjv */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/s3ve3gjv/s3ve3g:4.4.2/KOT49H/I9301QXXUANH1:user/release-keys");
+        property_override("ro.build.description", "samsung/s3ve3gjv/s3ve3g:4.4.2/KOT49H/I9301QXXUANH1:user/release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "GT-I9301Q");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "s3ve3gjv");
+        gsm_properties();
+    } else if (bootloader.find("I9300I") == 0) {
+        /* s3ve3gdsds */
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/s3ve3gdsxx/s3ve3gds:4.4.4/KTU84P/I9300IXWUBNJ1:user/release-keys");
+        property_override("ro.build.description", "s3ve3gdsxx-user 4.4.4 KTU84P I9300IXWUBNJ1 release-keys");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "GT-I9300I");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "s3ve3gds");
+        gsm_properties();
+    } else {
         gsm_properties();
     }
 
@@ -76,4 +85,3 @@ void init_target_properties()
     LOG(ERROR) << "Found bootloader id " << bootloader <<  " setting build properties for "
         << device <<  " device" << std::endl;
 }
-

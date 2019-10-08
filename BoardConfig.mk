@@ -13,26 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from common klte
-include device/samsung/klte-common/BoardConfigCommon.mk
-
-TARGET_OTA_ASSERT_DEVICE := kltexx,klte,klteduos
+# inherit from common s3ve3g
+include device/samsung/s3ve3g-common/BoardConfigCommon.mk
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineage_klteduos_defconfig
-
-# Fingerprint
-include $(COMMON_PATH)/fingerprint/board.mk
+TARGET_KERNEL_CONFIG := lineage_s3ve3gds_defconfig
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8974
-TARGET_LIBINIT_MSM8974_DEFINES_FILE := device/samsung/klteduos/init/init_klte.cpp
+TARGET_INIT_VENDOR_LIB := libinit_msm8226
+TARGET_LIBINIT_MSM8226_DEFINES_FILE := device/samsung/s3ve3gds/init/init_s3ve3g.cpp
 
 # NFC
-include $(COMMON_PATH)/nfc/pn547/board.mk
+# include $(COMMON_PATH)/nfc/pn547/board.mk
 
 # Radio/RIL
 include $(COMMON_PATH)/radio/dual/board.mk
 
 # inherit from the proprietary version
--include vendor/samsung/klteduos/BoardConfigVendor.mk
+-include vendor/samsung/s3ve3gds/BoardConfigVendor.mk
