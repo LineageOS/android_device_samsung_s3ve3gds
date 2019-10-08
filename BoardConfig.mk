@@ -16,6 +16,10 @@
 # inherit from common s3ve3g
 include device/samsung/s3ve3g-common/BoardConfigCommon.mk
 
+# Shims
+TARGET_LD_SHIM_LIBS += \
+        /system/vendor/lib/libmmcamera_imx175.so|libshim_imx175.so
+
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_s3ve3gds_defconfig
 
