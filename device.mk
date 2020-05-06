@@ -33,5 +33,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Radio/RIL
 $(call inherit-product, device/samsung/s3ve3g-common/radio/dual/product.mk)
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # common s3ve3g
 $(call inherit-product, device/samsung/s3ve3g-common/s3ve3g.mk)
