@@ -35,5 +35,5 @@ lib/libTs_J_Awb.so:vendor/lib/libTs_J_Awb.so|50e98007d1eac87bbcbd5756a1111aa7894
 etc/B08QT_imx175_module_info.xml
 
 # Radio - pinned to G900FDXXS1BPC3_G900FDOJV1BOI1_XSG
-lib/libsec-ril.so:vendor/lib/libsec-ril.so|584d767135810394577caca865660638f348caa1
-lib/libsec-ril-dsds.so:vendor/lib/libsec-ril-dsds.so|a7d7c966d9545f5e14cd0f5140a31d651c6f1b26
+lib/libsec-ril.so:vendor/lib/libsec-ril.so|549df7244a9360e486f1a69a28aa92424a0b5364
+lib/libsec-ril-dsds.so:vendor/lib/libsec-ril-dsds.so|e39dfea1f19bb7c6e988d11491f0990307c3eeb2
